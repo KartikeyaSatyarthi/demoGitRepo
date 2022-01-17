@@ -1,0 +1,50 @@
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Thymeleaf Demo</title>
+
+
+</head>
+
+<body bgcolor="pink">
+
+
+	<form action="/User/saveInDB" method="post">
+		<input type="text" name="value">
+		<button>Add in DB</button>
+		
+		<input type="hidden"		name="${_csrf.parameterName}"		value="${_csrf.token}"/>
+	</form>
+	<br>
+
+	<table>
+		<thead>
+			<tr>
+				<th>S.no.</th>
+				<th>Food Item</th>
+
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr th:each="item : ${items}">
+
+				<td th:text="${item.foodId}" />
+				<td th:text="${item.itemName}" />
+				<td>
+			</tr>
+		</tbody>
+	</table>
+
+
+</body>
+
+</html>
+
+
+
+
+
+

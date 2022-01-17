@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<title>Thymeleaf Demo</title>
+
+<!-- reference CSS file -->
+<link rel="stylesheet" th:href="@{/css/demo.css}" />
+
+</head>
+
+<body bgcolor="pink">
+ 
+ Admin page
+
+	<form action="/User/saveInDB" method="post">
+		<input type="text" name="value">
+		<button>Add in DB</button>
+		
+		<input type="hidden"
+		name="${_csrf.parameterName}"
+		value="${_csrf.token}"/>
+	</form>
+	<br>
+	<div bgcolor="gray">
+		<form action="/Admin/deleteFromDB" method="POST">
+			<input type="text" name="value"
+				placeholder="only integers input here">
+			<button>Delete From DB</button>
+			
+		<input type="hidden"
+		name="${_csrf.parameterName}"
+		value="${_csrf.token}"/>
+		</form>
+
+	</div>
+
+	<table>
+		<thead>
+			<tr>
+				<th>S.no.</th>
+				<th>Food Item</th>
+
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr th:each="item : ${items}">
+
+				<td th:text="${item.foodId}" />
+				<td th:text="${item.itemName}" />
+				<td>
+			</tr>
+		</tbody>
+	</table>
+	
+
+</body>
+
+</html>
+
+
+
+
+
+
