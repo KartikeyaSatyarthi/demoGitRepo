@@ -11,5 +11,5 @@ phases:
 
 artifacts:
 files:
-  -target/test.jar
+  -target/food-app.jar
   discard-paths: yes
