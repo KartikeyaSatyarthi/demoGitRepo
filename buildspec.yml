@@ -3,12 +3,12 @@ version: 0.2
 phases:
   build:
     commands:
-      -echo Entered the build phase...
-      -mvn clean package
+      - echo Entered the build phase...
+      - mvn clean package
   post_build:
-  commands:
-    -echo Build completed successfully
-
+    commands:
+      - echo Build completed successfully
 artifacts:
-files: -target/food-app.jar
+  files:
+    - target/food-app.jar
   discard-paths: yes
