@@ -10,5 +10,5 @@ phases:
     -echo Build completed successfully
 
 artifacts:
-files: target/food-app.jar
+files: -target/food-app.jar
   discard-paths: yes
